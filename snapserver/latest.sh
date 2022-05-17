@@ -9,5 +9,5 @@ fail() {
 }
 
 cd src
-docker build . -t d3v01d/flox:latest
-docker push d3v01d/flox:latest
+docker build . -t d3v01d/snapserver:latest
+docker push d3v01d/snapserver:latest
