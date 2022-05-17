@@ -1,0 +1,6 @@
+[submodule "actual/actual-server"]
+	path = actual/actual-server
+	url = git@github.com:actualbudget/actual-server.git
+[submodule "actual/src"]
+	path = actual/src
+	url = git@github.com:actualbudget/actual-server.git
