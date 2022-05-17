@@ -4,3 +4,6 @@
 [submodule "actual/src"]
 	path = actual/src
 	url = git@github.com:actualbudget/actual-server.git
+[submodule "sawnee/src"]
+	path = sawnee/src
+	url = https://github.com/D3v01dZA/sawnee-reader
