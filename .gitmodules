@@ -10,3 +10,6 @@
 [submodule "flox/src"]
 	path = flox/src
 	url = https://github.com/D3v01dZA/flox.git
+[submodule "air-quality/src"]
+	path = air-quality/src
+	url = git@github.com:D3v01dZA/SDS011.git
