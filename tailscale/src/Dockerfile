@@ -17,5 +17,7 @@ RUN echo 'net.ipv6.conf.all.forwarding = 1' | tee -a /etc/sysctl.conf
 
 RUN sysctl -p /etc/sysctl.conf
 
+RUN apt install -y bind9 dnsutils iputils-ping
+
 ENTRYPOINT ["./entrypoint.sh"]
 
