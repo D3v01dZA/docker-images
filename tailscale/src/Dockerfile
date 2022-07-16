@@ -14,6 +14,7 @@ COPY entrypoint.sh entrypoint.sh
 
 RUN echo 'net.ipv4.ip_forward = 1' | tee -a /etc/sysctl.conf
 RUN echo 'net.ipv6.conf.all.forwarding = 1' | tee -a /etc/sysctl.conf
+RUN echo 'net.ipv4.conf.all.src_valid_mark = 1' | tee -a /etc/sysctl.conf
 
 RUN sysctl -p /etc/sysctl.conf
 
