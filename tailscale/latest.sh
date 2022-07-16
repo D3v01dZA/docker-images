@@ -9,5 +9,6 @@ fail() {
 }
 
 cd src
-docker build . -t d3v01d/tailscale:latest
-docker push d3v01d/tailscale:latest
+#docker buildx create --name multiarch
+docker buildx use multiarch
+docker buildx build . --platform linux/arm/v7,linux/amd64 --tag d3v01d/tailscale:latest --push

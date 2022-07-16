@@ -20,5 +20,5 @@ RUN sysctl -p /etc/sysctl.conf
 
 RUN apt install -y bind9 dnsutils iputils-ping
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
 
