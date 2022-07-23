@@ -8,6 +8,6 @@ fail() {
     echo "Failed"
 }
 
-cd src
-docker tag d3v01d/sds011:latest d3v01d/sds011:stable
-docker push d3v01d/sds011:stable
+#docker buildx create --name multiarch
+docker buildx use multiarch
+docker buildx build . --platform linux/arm/v7 --tag d3v01d/sds011:stable --push
