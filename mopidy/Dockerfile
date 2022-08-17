@@ -10,6 +10,7 @@ RUN apt install -y \
     gir1.2-gst-plugins-base-1.0 \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-ugly \
+    gstreamer1.0-plugins-bad \
     gstreamer1.0-tools
 
 RUN python3 -m pip install --upgrade mopidy
