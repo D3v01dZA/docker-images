@@ -9,5 +9,5 @@ fail() {
 }
 
 cd src
-docker build . -t d3v01d/sawnee-reader:latest
-docker push d3v01d/sawnee-reader:latest
+docker buildx use multiarch
+docker buildx build --platform linux/arm/v7 --platform linux/amd64 . -t d3v01d/sawnee-reader:latest --push
