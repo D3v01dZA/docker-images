@@ -9,5 +9,5 @@ fail() {
 }
 
 cd src
-docker tag d3v01d/snapserver:latest d3v01d/snapserver:stable
-docker push d3v01d/snapserver:stable
+docker buildx use multiarch
+docker buildx build --platform linux/amd64 . -t d3v01d/snapserver:stable --push

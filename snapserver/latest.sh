@@ -9,5 +9,5 @@ fail() {
 }
 
 cd src
-docker build . -t d3v01d/snapserver:latest
-docker push d3v01d/snapserver:latest
+docker buildx use multiarch
+docker buildx build --platform linux/amd64 . -t d3v01d/snapserver:latest --push
