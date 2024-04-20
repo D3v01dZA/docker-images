@@ -9,5 +9,6 @@ fail() {
 }
 
 cd src
-docker tag d3v01d/snapclient:latest d3v01d/snapclient:stable
-docker push d3v01d/snapclient:stable
+docker buildx use multiarch
+docker buildx build --platform linux/amd64 . -t d3v01d/snapclient:stable-amd64 --build-arg="ARCH=amd64" --push --progress=plain
+docker buildx build --platform linux/armhf . -t d3v01d/snapclient:stable-armhf --build-arg="ARCH=armhf" --push --progress=plain
