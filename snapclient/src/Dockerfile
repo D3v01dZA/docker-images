@@ -4,7 +4,7 @@ ENV HOST snapserver
 ARG ARCH
 
 RUN  apt-get update \
-  && apt-get install -y wget ca-certificates zip
+  && apt-get install -y wget zip
 RUN wget https://github.com/badaix/snapcast/releases/download/v0.28.0/snapcast_0.28.0_${ARCH}-debian-bullseye.zip
 RUN mkdir zip
 RUN mv snapcast_0.28.0_${ARCH}-debian-bullseye.zip zip

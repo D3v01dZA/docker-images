@@ -1,5 +1,7 @@
 #!/bin/sh -ex
 
+lsusb
+
 if [ -z "$API_PASSWORD" ]
 then
    API_PASSWORD=$(dd if=/dev/urandom bs=18 count=1 2>/dev/null | base64)
