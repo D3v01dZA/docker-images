@@ -10,3 +10,6 @@
 [submodule "air-quality/src"]
 	path = air-quality/src
 	url = git@github.com:D3v01dZA/SDS011.git
+[submodule "vouch-proxy/vouch-proxy"]
+	path = vouch-proxy/vouch-proxy
+	url = git@github.com:vouch/vouch-proxy.git
