@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 RUN apt update
 RUN apt install -y \
@@ -13,8 +13,8 @@ RUN apt install -y \
     gstreamer1.0-plugins-bad \
     gstreamer1.0-tools
 
-RUN python3 -m pip install --upgrade mopidy
-RUN python3 -m pip install Mopidy-MPD
-RUN python3 -m pip install Mopidy-Iris
+RUN python3 -m pip install --break-system-packages --upgrade mopidy
+RUN python3 -m pip install --break-system-packages Mopidy-MPD
+RUN python3 -m pip install --break-system-packages Mopidy-Iris
 
 ENTRYPOINT ["mopidy", "--config", "/etc/mopidy/mopidy.conf"]
