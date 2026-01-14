@@ -1,15 +1,27 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 ENV HOST snapserver
 ARG ARCH
+ARG SHA256
 
 RUN  apt-get update \
-  && apt-get install -y wget zip
-RUN wget https://github.com/badaix/snapcast/releases/download/v0.28.0/snapcast_0.28.0_${ARCH}-debian-bullseye.zip
-RUN mkdir zip
-RUN mv snapcast_0.28.0_${ARCH}-debian-bullseye.zip zip
-RUN unzip -j zip/snapcast_0.28.0_${ARCH}-debian-bullseye.zip -d zip
-RUN apt-get install -y ./zip/snapclient_0.28.0-1_without-pulse_${ARCH}.deb
-RUN rm -rf zip
+  && apt-get install -y wget
+
+# Download snapclient .deb file
+RUN wget -O snapclient.deb https://github.com/badaix/snapcast/releases/download/v0.34.0/snapclient_0.34.0-1_${ARCH}_bookworm.deb
+
+# Verify SHA256
+RUN echo "${SHA256}  snapclient.deb" | sha256sum -c -
+
+# Install snapclient
+RUN apt-get install -y ./snapclient.deb
+
+# Cleanup
+RUN rm snapclient.deb \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
+# Verify installation
 RUN /usr/bin/snapclient -v
+
 ENTRYPOINT /usr/bin/snapclient -h $HOST $EXTRA_ARGS
