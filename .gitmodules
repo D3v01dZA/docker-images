@@ -10,3 +10,6 @@
 [submodule "vouch-proxy/vouch-proxy"]
 	path = vouch-proxy/vouch-proxy
 	url = git@github.com:vouch/vouch-proxy.git
+[submodule "prism/prism.tools"]
+	path = prism/prism.tools
+	url = https://github.com/BLGardner/prism.tools.git
